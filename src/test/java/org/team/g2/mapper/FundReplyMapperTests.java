@@ -18,7 +18,7 @@ import java.util.stream.IntStream;
 @ContextConfiguration(classes = {FundRootConfig.class, RootConfig.class})
 public class FundReplyMapperTests {
 
-    @Autowired(required = false) //스프링이로딩될때 Autowired가능한지 체크하지 않는다.
+    @Autowired(required = false) // 스프링이 로딩될 때 Autowired 가능한지 체크하지 않는다.
     FundReplyMapper replyMapper;
 
     @Test
@@ -31,8 +31,8 @@ public class FundReplyMapperTests {
 
             FundReply reply = FundReply.builder()
                     .fno(fno)
-                    .freply("ㅇㅈ")
-                    .freplyer("삼송 불주먹"+(num % 9)) //0~9까지
+                    .freply("댓글입니다!")
+                    .freplyer("글쓴이"+(num % 9)) // 글쓴이 1-9
                     .build();
 
             replyMapper.insert(reply);
