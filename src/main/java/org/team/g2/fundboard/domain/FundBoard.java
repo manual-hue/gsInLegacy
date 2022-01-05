@@ -34,13 +34,13 @@ public class FundBoard {
     private List<FundBoardHashtag> hashList = new ArrayList<>(); // 해시태그 검색
 
     @Builder.Default
-    private List<FundBoardAttach> attachList = new ArrayList<>(); //Board안에 BoardAttach 첨부파일 내용 필요
+    private List<FundBoardAttach> attachList = new ArrayList<>(); // Board 내 BoardAttach 첨부파일 내용 필요
 
     public FundBoardDTO getDTO() {
 
         List<String> hashListStr = null;
 
-        if(hashList != null){ //해시리스트가 String으로 받았기때문에
+        if(hashList != null){ // 해시리스트를 String으로 받았기 때문에
             hashListStr = hashList.stream().map(hashObj ->hashObj.getTags()).collect(Collectors.toList());
         }
 
@@ -56,11 +56,6 @@ public class FundBoard {
                 .goalPrice(goalPrice)
                 .tags(hashtagList2)
                 .build();
-//
-//        // 해쉬태그 추가
-//        List<String> hashtagDTOList = hashtagList.stream().collect(Collectors.toList());
-//
-//        fundBoardDTO.setTags(hashtagDTOList);
 
         return fundBoardDTO;
     }
@@ -69,18 +64,12 @@ public class FundBoard {
         this.fno = fno;
     }
 
-    public void setTags(List<String> tags) {this.hashtagList2 = tags; } // 조회시 해시태그
+    public void setTags(List<String> tags) { this.hashtagList2 = tags; } // 조회시 해시태그
 
-    public void addHashtag(String hashtag){
-        hashtagList.add(hashtag);
-    } // 등록
+    public void addHashtag(String hashtag){ hashtagList.add(hashtag); } // 등록
 
-    public void hashSelect(String hashTags) {
-        hashtagList2.add(hashTags); //해시태그조회
-    }
+    public void hashSelect(String hashTags) { hashtagList2.add(hashTags); } // 해시태그 조회
 
-    public void addAttach(FundBoardAttach attach) { //첨부파일 등록
-        attachList.add(attach);
-    }
+    public void addAttach(FundBoardAttach attach) { attachList.add(attach); } // 첨부파일 등록
 
 }
