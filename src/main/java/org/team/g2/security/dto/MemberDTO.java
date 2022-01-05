@@ -18,8 +18,7 @@ public class MemberDTO extends User {
 	private String userPW;
 	private boolean userEnabled;
 
-
-	//ㄱ memberRole
+	// memberRole
 	public MemberDTO(Member member) {
 		super(member.getUserID(), member.getUserPW(), member.getRoleList().stream().map(memberRole -> new SimpleGrantedAuthority(
 				memberRole.getRole())).collect(Collectors.toList()));
@@ -27,7 +26,5 @@ public class MemberDTO extends User {
 		this.userID = member.getUserID();
 		this.userPW = member.getUserPW();
 		this.userEnabled = member.isUserEnabled();
-
 	}
-
 }
