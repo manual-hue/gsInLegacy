@@ -29,12 +29,10 @@ import javax.sql.DataSource;
 @RequiredArgsConstructor
 // common/WebConfig getRootConfigClasses()에 연결
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-	{
-		log.info("SecurityConfig!!!!");
-		log.info("SecurityConfig!!!!");
-		log.info("SecurityConfig!!!!");
-	}
-
+	
+	log.info("SecurityConfig!!!!");
+	log.info("SecurityConfig!!!!");
+	log.info("SecurityConfig!!!!");
 
 	@Autowired
 	private CustomUserDetailsService customUserDetailsService;
@@ -79,11 +77,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	public CustomAuthenticationEntryPoint customAuthenticationEntryPoint(){
 		return new CustomAuthenticationEntryPoint();
 	}
-
-
-
-//	@Bean
-//	public CustomUserDetailsService customUserDetailsService() {
-//		return new CustomUserDetailsService();
-//	}
 }
