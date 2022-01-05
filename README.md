@@ -14,7 +14,7 @@
 ### 개발 환경
 > 
 - **Spring** MVC, Spring Security
-- MyBatis, HikariCP, REST-API
+- MyBatis, HikariCP, REST-API, JUnit4
 - JSP, JQuery, AJAX, Axios, Bootstrap
 - MySQL
 - IntelliJ, Webstorm, Postman
