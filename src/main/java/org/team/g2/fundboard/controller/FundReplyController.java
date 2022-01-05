@@ -9,7 +9,7 @@ import org.team.g2.fundboard.service.FundReplyService;
 import java.util.List;
 
 @Log4j2
-@RestController // @ResponseBody 걸린다.
+@RestController //@ResponseBody걸린다.
 @RequestMapping("/replies")
 @RequiredArgsConstructor
 public class FundReplyController {
@@ -28,11 +28,12 @@ public class FundReplyController {
         return new String[]{"AAA","BBB","CCCC"};
     }
 
-    @GetMapping("/list/{fno}") // replies/list/128 (REST방식)
+    @GetMapping("/list/{fno}") //replies/list/128 (REST방식)
     public List<FundReplyDTO> getBoardReplies(@PathVariable(name="fno") Long fno) {
 
         //서비스 계층 호출
         return replyService.getRepliesWithFno(fno);
+
     }
 
     @PostMapping("")
@@ -42,10 +43,11 @@ public class FundReplyController {
         log.info(replyDTO);
 
         return replyService.add(replyDTO);
+
     }
 
     @PutMapping("/{frno}") // 댓글 수정
-    public String modify( @PathVariable(name="frno") Long frno,
+    public String modify( @PathVariable(name="frno")  Long frno,
                           @RequestBody FundReplyDTO replyDTO){
 
         log.info("-------------reply modify-------------" + frno);
@@ -66,4 +68,5 @@ public class FundReplyController {
 
         return "success";
     }
+
 }

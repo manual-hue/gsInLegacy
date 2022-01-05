@@ -15,6 +15,7 @@ import org.team.g2.fundboard.service.FundBoardService;
 
 import java.util.List;
 
+
 @Controller
 @RequestMapping("/fundboard/*")
 @Log4j2
@@ -23,6 +24,12 @@ public class FundBoardController {
 
   private final TimeMapper timeMapper;
   private final FundBoardService fundBoardService;
+
+  @GetMapping("/sample")
+
+  public void sample() {
+
+  }
 
   @GetMapping("/time")
     public void time(Model model) {
@@ -37,15 +44,16 @@ public class FundBoardController {
 
     FundBoardDTO fundBoardDTO = fundBoardService.read(fno);
 
-    log.info("-----------------------------");
-    log.info("fundboardDTO :: "+fundBoardDTO);
-    log.info("-----------------------------");
+    log.info("한나야 취직하자"+fundBoardDTO);
 
     model.addAttribute("boardDTO", fundBoardDTO);
   }
 
   @GetMapping("/register")
-  public void registerGet() {  }
+  public void registerGet() {
+
+  }
+
 
   @PostMapping("/register")
   public String registerPost(FundBoardDTO fundBoardDTO, RedirectAttributes redirectAttributes) {
@@ -96,6 +104,7 @@ public class FundBoardController {
       }
 
       redirectAttributes.addAttribute("num", hashtagDTO.getNum());
+
       redirectAttributes.addAttribute("fno", fundBoardDTO.getFno());
       redirectAttributes.addAttribute("page", pageRequestDTO.getPage());
       redirectAttributes.addAttribute("size", pageRequestDTO.getSize());

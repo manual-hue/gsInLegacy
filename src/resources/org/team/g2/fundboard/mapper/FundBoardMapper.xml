@@ -26,13 +26,13 @@
         </if>
     </sql>
 
-    <select id="getHashList" resultType="org.team.g2.fundboard.domain.FundBoard">
-        select fno, ftitle, fwriter, fcontent, gubun, tags from
-        (select fno, ftitle, fwriter, fcontent, gubun, tags from tbl_fundboard f left outer join tbl_hashtag t on t.num = f.fno
-        <include refid="search"></include>
-        order by f.fno desc) temp
-        limit #{skip},#{size}
-    </select>
+        <select id="getHashList" resultType="org.team.g2.fundboard.domain.FundBoard">
+            select fno, ftitle, fwriter, fcontent, gubun, tags from
+            (select fno, ftitle, fwriter, fcontent, gubun, tags from tbl_fundboard f left outer join tbl_hashtag t on t.num = f.fno
+            <include refid="search"></include>
+            order by f.fno desc) temp
+            limit #{skip},#{size}
+        </select>
 
     <insert id="insert">
         insert into tbl_fundboard(ftitle,fcontent,fwriter,fenddate, fprice, goalPrice)
@@ -129,4 +129,5 @@
     <delete id="deleteHashtag">
         delete from tbl_hashtag where num=#{num} and gubun='F'
     </delete>
+
 </mapper>

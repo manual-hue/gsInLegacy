@@ -23,12 +23,18 @@ public class TimeMapperTests {
 	@Autowired
 	DataSource dataSource;
 
+
 	@Autowired
 	TimeMapper timeMapper;
+
+
 
 	@Test
 	public void testTime() {
 		log.info(timeMapper);
 		log.info(timeMapper.getTime());
 	}
+
+
+
 }

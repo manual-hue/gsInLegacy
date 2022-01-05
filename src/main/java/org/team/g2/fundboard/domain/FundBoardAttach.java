@@ -18,4 +18,5 @@ public class FundBoardAttach {
     public void setFno(Long fno){
         this.fno = fno;
     }
+
 }

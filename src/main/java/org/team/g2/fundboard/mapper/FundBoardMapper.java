@@ -16,9 +16,9 @@ public interface FundBoardMapper {
     int update(FundBoard fundBoard);
     void updateFundCnt(long fno);
     int delete(long fno);
-    
-    // 해시태그
-    void insertHashtag(@Param("num") Long num, @Param("tags") String tags); // 입력
-    List<String> selectHash(@Param("num") Long num); // 조회
-    int deleteHashtag(@Param("num") Long num); // 삭제
+    // hashtags
+    void insertHashtag(@Param("num") Long num, @Param("tags") String tags);
+    List<String> selectHash(@Param("num") Long num); //해시태그조회
+    int deleteHashtag(@Param("num") Long num); //해시태그삭제
+//    List<String> selectHash(@Param("num") Long num);
 }
