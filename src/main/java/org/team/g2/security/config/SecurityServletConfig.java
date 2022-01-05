@@ -7,6 +7,6 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 @Configuration
 @ComponentScan(basePackages = {"org.team.g2.security.controller"})
 @EnableGlobalMethodSecurity(prePostEnabled = true)
-// ㄱ WebConfig의 getServletConfigClasses()에 연결
+// WebConfig의 getServletConfigClasses()에 연결
 public class SecurityServletConfig {
 }
