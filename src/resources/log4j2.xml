@@ -36,8 +36,7 @@
             <AppenderRef ref="console"/>
         </root>
 
-
-        <!--ㄱ시큐리티 TRACE단계-->
+        <!-- 시큐리티 TRACE단계-->
         <logger name="org.springframework.security" level="INFO" additivity="false">
             <appender-ref ref="console"/>ㄹ
         </logger>
